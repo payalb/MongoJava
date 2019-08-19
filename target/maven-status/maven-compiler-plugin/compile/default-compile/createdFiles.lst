@@ -1,6 +1,10 @@
+com\java\dao\ProductrepositoryOneImpl.class
+com\java\dao\ProductrepositoryOneI1.class
 com\java\dto\Product$ProductBuilder.class
+com\java\config\DatabaseProperties.class
+com\java\dao\ProductrepositoryOne.class
+com\java\util\ProductInitializer.class
+com\java\dao\ProductrepositoryOneImpl$1.class
 com\java\dto\Product.class
 com\java\ui\Client.class
 com\java\config\SpringConfig.class
-com\java\dao\ProductRepository.class
-com\java\dao\DbUtil.class

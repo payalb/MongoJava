@@ -13,7 +13,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.result.UpdateResult;
-@Repository
 public class ProductrepositoryOneImpl implements ProductrepositoryOneI1{
 	 @Autowired
 	    MongoTemplate mongoTemplate;
@@ -32,14 +31,16 @@ public class ProductrepositoryOneImpl implements ProductrepositoryOneI1{
 			}
 		});
 
-		/*	@Override
+/*		mongoTemplate.execute(new DbCallback<Product>() {
+			@Override
 			public Product doInDB(MongoDatabase db) throws MongoException, DataAccessException {
 				MongoCollection<Product> c=db.getCollection("products", Product.class);
-				 CodecRegistry codecRegistry =db.getCodecRegistry();
 				BsonValue v= new BsonString(id);
-				return c.findOneAndUpdate(Updates.set("_id",v).toBsonDocument(Object.class, codecRegistry),Updates.set("title", new BsonString(title)).toBsonDocument(Object.class, codecRegistry));
+				return c.findOneAndUpdate(Filters.eq("_id", id),new Document("$set", new Document("title", title)));
 			}
 		});*/
+			
+		//});
 	}
 
 }
